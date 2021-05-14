@@ -24,7 +24,7 @@ public class AddressAdapter extends RecyclerView.Adapter<MyViewHolder> {
     }
 
     public AddressAdapter(AppDatabase appDatabase, Context context) {
-        this.appDatabase=appDatabase;
+        this.appDatabase = appDatabase;
         this.context = context;
         notityDataChanged();
     }
@@ -40,7 +40,7 @@ public class AddressAdapter extends RecyclerView.Adapter<MyViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         Address address = addressList.get(position);
-        holder.tvName.setText(address.getId()+". "+ address.getName().toString());
+        holder.tvName.setText(address.getId() + ". " + address.getName().toString());
 
         holder.btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,7 +53,7 @@ public class AddressAdapter extends RecyclerView.Adapter<MyViewHolder> {
         holder.btnEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SendingData s= (SendingData) context;
+                SendingData s = (SendingData) context;
                 s.sendData(address);
             }
         });
@@ -61,14 +61,14 @@ public class AddressAdapter extends RecyclerView.Adapter<MyViewHolder> {
         holder.setItemClickListenner(new ItemClickListenner() {
             @Override
             public void onclick(View view, int position, boolean isLongClick) {
-                view.setBackgroundColor(Color.argb(100,255,0,0));
+                view.setBackgroundColor(Color.argb(100, 255, 0, 0));
             }
         });
 
     }
 
     public void notityDataChanged() {
-        addressList= (ArrayList<Address>) appDatabase.addressDao().getAll();
+        addressList = (ArrayList<Address>) appDatabase.addressDao().getAll();
         notifyDataSetChanged();
     }
 

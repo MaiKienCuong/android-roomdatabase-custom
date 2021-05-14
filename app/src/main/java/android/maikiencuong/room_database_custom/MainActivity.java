@@ -61,15 +61,12 @@ public class MainActivity extends AppCompatActivity implements SendingData {
                 if (id != -1 && !address.getName().trim().isEmpty()) {
                     address.setId(id);
                     db.addressDao().update(address);
-                    adapter.notityDataChanged();
-                    tvAdd.setText("");
-                    id = -1;
                 } else if (id == -1 && !address.getName().trim().isEmpty()) {
                     db.addressDao().insertAll(address);
-                    adapter.notityDataChanged();
-                    tvAdd.setText("");
-                    id = -1;
                 }
+                adapter.notityDataChanged();
+                tvAdd.setText("");
+                id = -1;
             }
         });
 
