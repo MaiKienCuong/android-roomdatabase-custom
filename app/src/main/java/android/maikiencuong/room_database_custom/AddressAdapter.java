@@ -2,11 +2,9 @@ package android.maikiencuong.room_database_custom;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.maikiencuong.room_database_basic.R;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewParent;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -18,10 +16,6 @@ public class AddressAdapter extends RecyclerView.Adapter<MyViewHolder> {
     private ArrayList<Address> addressList;
     private Context context;
     private AppDatabase appDatabase;
-
-    public void setAddressList(ArrayList<Address> addressList) {
-        this.addressList = addressList;
-    }
 
     public AddressAdapter(AppDatabase appDatabase, Context context) {
         this.appDatabase = appDatabase;
@@ -76,6 +70,5 @@ public class AddressAdapter extends RecyclerView.Adapter<MyViewHolder> {
     public int getItemCount() {
         return addressList.size();
     }
-
 
 }

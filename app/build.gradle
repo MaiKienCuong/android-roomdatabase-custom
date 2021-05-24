@@ -7,7 +7,7 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "android.maikiencuong.room_database_basic"
+        applicationId "android.maikiencuong.room_database_custom"
         minSdkVersion 21
         targetSdkVersion 30
         versionCode 1

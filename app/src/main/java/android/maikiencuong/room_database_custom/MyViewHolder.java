@@ -1,6 +1,5 @@
 package android.maikiencuong.room_database_custom;
 
-import android.maikiencuong.room_database_basic.R;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
